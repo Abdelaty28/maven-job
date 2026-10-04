@@ -9,7 +9,7 @@ public class App {
         HttpServer server = HttpServer.create(new InetSocketAddress(9090), 0);
 
         server.createContext("/", exchange -> {
-            byte[] body = "بسم الله الرحمن الرحيم".getBytes(StandardCharsets.UTF_8);
+            byte[] body = "hello from jenkins server".getBytes(StandardCharsets.UTF_8);
             exchange.getResponseHeaders().add("Content-Type", "text/plain; charset=utf-8");
             exchange.sendResponseHeaders(200, body.length);
             exchange.getResponseBody().write(body);
